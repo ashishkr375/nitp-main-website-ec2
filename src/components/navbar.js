@@ -20,7 +20,8 @@ import DynamicLink from "./global/dynamicurl"
 import { isBrowser } from "./isBrowser"
 
 const Navbar = ({ theme, changeTheme, department, font, changeFont }) => {
- const pathname = window.location.pathname.split("/")[1]
+ const pathname =
+  typeof window !== "undefined" ? window.location.pathname.split("/")[1] : null
  const isInSession = () => {
   if (!isBrowser) {
    return
